@@ -1,6 +1,7 @@
 /**
  * Created by pujag on 6/5/17.
  */
+package com.tw.puja;
 public class OrientationDirectionPairs {
     private char currentOrientation;
     private char givenDirection;
