@@ -15,4 +15,11 @@ public class PositionTest {
         assertEquals(3,position.getYCoordinate());
         assertEquals(Orientation.E,position.getOrientation());
     }
+
+    @Test
+    public void  positionsWithEqualCoordinateAndOrientationShouldBeEqual() {
+        Position p1=new Position(1,2,Orientation.N);
+        Position p2=new Position(1,2,Orientation.N);
+        assertEquals(p1,p2);
+    }
 }
