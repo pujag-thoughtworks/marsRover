@@ -13,7 +13,7 @@ public class MarsRover {
     }
 
     public Orientation changeOrientation(char c) {
-        Orientation currentOrientation=position.orientation;
+        Orientation currentOrientation=position.getOrientation();
         if(!(c=='L' || c=='R'))
             throw new IllegalArgumentException();
         if(c=='L')

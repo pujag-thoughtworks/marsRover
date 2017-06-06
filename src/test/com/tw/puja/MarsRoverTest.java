@@ -12,8 +12,9 @@ public class MarsRoverTest {
         assertEquals(Orientation.E,marsRover.changeOrientation('R'));
     }
 
-  /*  @Test
+   /*@Test
     public void movingOneStepwhileFacingEastIncreasesXCoordinateByOne() {
-        MarsRover marsRover=new MarsRover
+        MarsRover marsRover=new MarsRover(new Position(1,1,Orientation.E));
+        Position=
     } */
 }
