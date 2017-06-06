@@ -1,57 +1,53 @@
 package com.tw.puja;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by pujag on 6/5/17.
  */
 public class MarsRover {
     private Position position;
-     int xCoordinate=position.getXCoordinate();
-     int yCoordinate=position.getYCoordinate();
-      Orientation orientation=position.getOrientation();
-
 
     MarsRover(Position initialPosition) {
-        position=initialPosition;
+        position = initialPosition;
     }
 
-    public void changeOrientation(char c) {
-        if(!(c=='L' || c=='R'))
+    public Position getNextPosition(char c,Position currentPosition) {
+        int xCoordinate = currentPosition.getXCoordinate();
+        int yCoordinate = currentPosition.getYCoordinate();
+        Orientation orientation = currentPosition.getOrientation();
+
+        if (!(c == 'L' || c == 'R' || c == 'M'))
             throw new IllegalArgumentException();
-        if(c=='L') {
-            orientation= orientation.left;
-            return; }
 
-        orientation=orientation.right;
-    }
+        if (c == 'L')
+            orientation = orientation.left;
 
-    public void moveForward() {
-        switch (orientation) {
-            case N: {
-                yCoordinate++;
-                break;
-            }
-            case S: {
-                yCoordinate--;
-                break;
-            }
-            case E: {
-                xCoordinate++;
-                break;
-            }
-            case W: {
-                xCoordinate--;
-                break;
+        if (c == 'R')
+            orientation = orientation.right;
+
+        if (c == 'M') {
+
+            switch (orientation) {
+                case N: {
+                    yCoordinate++;
+                    break;
+                }
+                case S: {
+                    yCoordinate--;
+                    break;
+                }
+                case E: {
+                    xCoordinate++;
+                    break;
+                }
+                case W: {
+                    xCoordinate--;
+                    break;
+                }
             }
         }
-
+        return new Position(xCoordinate, yCoordinate, orientation);
     }
 
-
-    public Position getFinalPosition() {
-        return new Position(xCoordinate,yCoordinate,orientation);
-    }
 }
 
 

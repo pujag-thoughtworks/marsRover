@@ -8,17 +8,19 @@ public class MarsRoverTest {
 
     @Test
     public void rightOfNorthShouldBeEast() {
-        MarsRover marsRover=new MarsRover(new Position(1,2,Orientation.N));
-        marsRover.changeOrientation('R');
-        Position finalPosition=marsRover.getFinalPosition();
-        assertEquals(Orientation.E,finalPosition.getOrientation());
+        Position position=new Position(1,2,Orientation.N);
+        MarsRover marsRover=new MarsRover(position);
+        Position nextPosition=marsRover.getNextPosition('R',position);
+        assertEquals(Orientation.E,nextPosition.getOrientation());
     }
 
    @Test
     public void movingOneStepwhileFacingEastIncreasesXCoordinateByOne() {
-        MarsRover marsRover=new MarsRover(new Position(1,1,Orientation.E));
+        Position position=new Position(1,1,Orientation.E);
+        MarsRover marsRover=new MarsRover(position);
         Position expectedPosition= new Position(2,1,Orientation.E);
-        marsRover.moveForward();
-        assertEquals(expectedPosition,marsRover.getFinalPosition());
+        assertEquals(expectedPosition,marsRover.getNextPosition('M',position));
     }
+
+
 }
