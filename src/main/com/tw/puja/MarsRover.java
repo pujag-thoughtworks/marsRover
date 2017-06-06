@@ -6,28 +6,22 @@ import java.util.Map;
  * Created by pujag on 6/5/17.
  */
 public class MarsRover {
-    private int xCoordinate;
-    private int yCoordinate;
-    private Orientation orientation;
+    Position position;
 
-    MarsRover(int x, int y, Orientation orientation) {
-        xCoordinate=x;
-        yCoordinate=y;
-        this.orientation=orientation;
+    MarsRover(Position initialPosition) {
+        position=initialPosition;
     }
 
-    public void changeOrientation(char c) {
+    public Orientation changeOrientation(char c) {
+        Orientation currentOrientation=position.orientation;
         if(!(c=='L' || c=='R'))
             throw new IllegalArgumentException();
-        if(c=='L') {
-            orientation = orientation.left;
-            return;
-        }
-        orientation=orientation.right;
+        if(c=='L')
+            return currentOrientation.left;
+
+        return currentOrientation.right;
     }
-     public Orientation getOrientation() {
-        return orientation;
-     }
+
 
     /*public void calculateNextPosition() {
         switch (orientation) {
