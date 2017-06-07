@@ -19,5 +19,21 @@ public enum Orientation {
         }
     Orientation left;
     Orientation right;
+
+    public static Orientation getCharEquivalent(char c) {
+        switch(c) {
+            case 'N':
+                return Orientation.N;
+            case 'S':
+                return Orientation.S;
+            case 'E' :
+                return Orientation.E;
+            case 'W' :
+                return Orientation.W;
+            default:
+                break;
+        }
+        throw new IllegalArgumentException();
+    }
     }
 

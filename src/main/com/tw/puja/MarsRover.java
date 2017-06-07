@@ -45,9 +45,18 @@ public class MarsRover {
                 }
             }
         }
-        return new Position(xCoordinate, yCoordinate, orientation);
+        return new Position(xCoordinate, yCoordinate, orientation,currentPosition.getPlateau());
     }
 
+    public Position getFinalPosition(String inputString) {
+        Position nextPosition=position;
+        int charIndex=0;
+        while(charIndex<inputString.length()) {
+            nextPosition=getNextPosition(inputString.charAt(charIndex),nextPosition);
+            charIndex++;
+        }
+        return nextPosition;
+    }
 }
 
 
