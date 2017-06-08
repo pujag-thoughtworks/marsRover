@@ -11,12 +11,11 @@ import java.util.InputMismatchException;
  */
 public class Solution {
     public static void main(String args[]) throws IOException {
-        System.out.println("Enter coordinates to st plateau size");
         BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
         String Limit=bufferedReader.readLine();
         String[] limit=Limit.split("\\s");
         Plateau marsPlateau=new Plateau(Integer.valueOf(limit[0]),Integer.valueOf(limit[1]));
-        HashMap<String,String> roverInitialPositionAndMovementInstruction=new HashMap<>();
+       /* HashMap<String,String> roverInitialPositionAndMovementInstruction=new HashMap<>();
         while(true) {
             String line=bufferedReader.readLine();
             if(line.length()==0)
@@ -25,7 +24,7 @@ public class Solution {
             String movementInstructions=bufferedReader.readLine();
             roverInitialPositionAndMovementInstruction.put(initialPosition,movementInstructions);
         }
-
+        bufferedReader.close();
         for(String initialPositionString: roverInitialPositionAndMovementInstruction.keySet()) {
             String[] positionString=initialPositionString.split("\\s");
             if(positionString.length<3)
@@ -38,9 +37,9 @@ public class Solution {
             String movementInstruction=roverInitialPositionAndMovementInstruction.get(initialPositionString);
             Position finalPosition=marsRover.getFinalPosition(movementInstruction);
             System.out.println(finalPosition);
-        }
+        } */
 
-          /*
+
            while(true) {
            String line=bufferedReader.readLine();
            if(line.length()==0)
@@ -56,7 +55,7 @@ public class Solution {
             String instructions=bufferedReader.readLine().trim();
             Position finalPosition=marsRover.getFinalPosition(instructions);
             System.out.println(finalPosition);
-        } */
+        }
 
     }
 }
